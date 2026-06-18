@@ -1,11 +1,11 @@
 import Sidebar from "@/src/shared/layout/Sidebar";
 import MobileBottomNav from "@/src/shared/layout/MobileBottomNav";
 import RightPanel from "@/src/shared/layout/RightPanel";
-import ThemeToggle from "@/src/shared/theme/ThemeToggle";
 
 import SearchBar from "./components/SearchBar";
 import CategoryTabs from "./components/CategoryTabs";
 import FeedGrid from "./components/FeedGrid";
+import TopBar from "@/src/shared/layout/Topbar";
 
 export default function DiscoverPage() {
   return (
@@ -17,22 +17,16 @@ export default function DiscoverPage() {
       {/* Main Content */}
       <div className="lg:ml-64 xl:mr-80">
 
+        {/* TOP BAR (NEW) */}
+        <TopBar />
+
+        {/* Page Content */}
         <div className="p-6">
 
-          {/* Search + Theme */}
-          <div className="flex gap-10 items-center">
+          {/* Search */}
+          <div className="flex gap-4 items-center mt-2">
             <SearchBar />
-            <ThemeToggle />
           </div>
-
-          {/* Title 
-          <h1 className="text-3xl font-bold mt-8">
-            Discover
-          </h1> 
-
-          <p className="text-sm opacity-70 mt-2">
-            Discover. Enjoy. Everyday.
-          </p> */}
 
           {/* Categories */}
           <div className="mt-6">
@@ -45,7 +39,6 @@ export default function DiscoverPage() {
           </div>
 
         </div>
-
       </div>
 
       {/* Right Panel */}
@@ -55,7 +48,6 @@ export default function DiscoverPage() {
 
       {/* Mobile Bottom Navigation */}
       <MobileBottomNav />
-
     </main>
   );
 }

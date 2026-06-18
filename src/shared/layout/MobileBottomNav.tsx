@@ -2,17 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Home,
-  Search,
-  MapPin,
-  User,
-} from "lucide-react";
+import { Home, Search, MapPin, User } from "lucide-react";
 
 export default function MobileBottomNav() {
   const pathname = usePathname();
 
-  const navItems = [
+  const items = [
     { href: "/", label: "Home", icon: Home },
     { href: "/explore", label: "Explore", icon: Search },
     { href: "/nearby", label: "Nearby", icon: MapPin },
@@ -20,11 +15,10 @@ export default function MobileBottomNav() {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden pb-[env(safe-area-inset-bottom)]">
-
+    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden">
       <div className="h-16 bg-[var(--surface)] border-t border-[var(--border)] flex items-center justify-around">
 
-        {navItems.map((item) => {
+        {items.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
 
@@ -36,11 +30,11 @@ export default function MobileBottomNav() {
             >
               <Icon
                 size={22}
-                className={`transition-colors ${
+                className={
                   isActive
                     ? "text-blue-500"
                     : "text-[var(--text-muted)]"
-                }`}
+                }
               />
 
               <span
@@ -52,10 +46,6 @@ export default function MobileBottomNav() {
               >
                 {item.label}
               </span>
-
-              {isActive && (
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1" />
-              )}
             </Link>
           );
         })}

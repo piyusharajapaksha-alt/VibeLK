@@ -1,5 +1,5 @@
-import AppShell from "@/src/shared/layout/AppShell";
+import DiscoverPage from "@/src/features/discover/DiscoverPage";
 
 export default function Page() {
-  return <AppShell />;
+  return <DiscoverPage />;
 }
