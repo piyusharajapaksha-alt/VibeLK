@@ -1,3 +1,6 @@
+import MobileBottomNav from "@/src/shared/layout/MobileBottomNav";
+import RightPanel from "@/src/shared/layout/RightPanel";
+
 export default function NearbyPage() {
   return (
     <main className="min-h-screen p-6 bg-[var(--background)] text-[var(--foreground)]">
@@ -25,6 +28,13 @@ export default function NearbyPage() {
         </div>
 
       </div>
+      {/* Right Panel */}
+      <div className="hidden xl:block fixed right-0 top-0 h-screen">
+        <RightPanel />
+      </div>
+
+      {/* Mobile Bottom Navigation */}
+      <MobileBottomNav />
 
     </main>
   );

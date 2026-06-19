@@ -3,6 +3,8 @@
 import { Bell } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+import ThemeToggle from "@/src/shared/theme/ThemeToggle";
+
 export default function TopBar() {
   const router = useRouter();
 
@@ -15,6 +17,9 @@ export default function TopBar() {
           <span className="text-orange-500">Vibe</span>
           <span className="text-pink-500">LK</span>
         </h1>
+        <div className="flex items-center gap-3">
+        <ThemeToggle />
+      </div>
 
         {/* Right actions */}
         <div className="flex items-center gap-3">

@@ -1,4 +1,5 @@
 import { Event } from "@/src/types/event";
+import Link from "next/link";
 
 export default function FeedCard({ event }: { event: Event }) {
   return (
@@ -32,9 +33,12 @@ export default function FeedCard({ event }: { event: Event }) {
           <span>💬 {event.comments}</span>
         </div>
 
-        <button className="text-purple-400 font-medium">
+        <Link
+          href={`/post/${event.id}`}
+          className="text-purple-400 font-medium hover:text-purple-300 transition"
+        >
           View
-        </button>
+        </Link>
       </div>
 
     </div>
